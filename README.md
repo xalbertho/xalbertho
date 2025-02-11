@@ -37,6 +37,13 @@
     height="30" 
     src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg"
     alt="Logo python"/></code>
+
+    <!-- Instagram -->
+<code><a href="https://www.instagram.com/b_rmdz?igsh=bHA3OWhrdW9sOXM2" target="_blank"><img
+    height="30" 
+    src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" 
+    style="filter: invert(1);"
+    alt="Logo Instagram"/></a></code>
   </div>
 &nbsp;<div align="center">
 
