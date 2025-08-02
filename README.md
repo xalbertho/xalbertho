@@ -1,6 +1,10 @@
 &nbsp;<div align="center">
   [![Spotify](https://spotify-now-albertos-projects-c7a2f9c2.vercel.app//api/spotify?background_color=0d1117&border_color=ffffff)](https://open.spotify.com/user/31uymqpieuqu273rs7p3vfuqo3sy?si=facca7da777d4582)
+  
 </div>
+
+
+
 
 &nbsp;<div align="center">
   
@@ -35,13 +39,16 @@
     src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg"
     alt="Logo python"/></code>
 
-     <!-- Instagram -->
+
+<!-- Instagram -->
 <code><a href="https://www.instagram.com/b_rmdz?igsh=bHA3OWhrdW9sOXM2" target="_blank"><img
     height="30" 
     src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" 
     style="filter: invert(1);"
     alt="Logo Instagram"/></a></code>
   </div>
-&nbsp;<div align="center">
+&nbsp;<div align="center">  
 
-  [![Visits](https://komarev.com/ghpvc/?username=xalbertho&logo=GitHub&label=github%20visits&color=336699&logoColor=white&style=flat-square)](https://github.com/xalbertho)
+  ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=xalbertho&layout=compact&theme=monokai)
+
+[![Visits](https://komarev.com/ghpvc/?username=xalbertho&logo=GitHub&label=github%20visits&color=336699&logoColor=white&style=flat-square)](https://github.com/xalbertho)
