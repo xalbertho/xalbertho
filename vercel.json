@@ -6,10 +6,10 @@
       "use": "@vercel/python"
     }
   ],
-  "redirects": [
+  "routes": [
     {
-      "source": "/",
-      "destination": "https://github.com/xalbertho/xalbertho"
+      "src": "/api/spotify",
+      "dest": "api/spotify.py"
     }
   ]
 }
