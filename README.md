@@ -4,8 +4,8 @@
 </div>
  if the icon use this vercerl deploy e up down
  
- [![Spotify](https://spotify-now-git-main-albertos-projects-c7a2f9c2.vercel.app//api/spotify?background_color=0d1117&border_color=ffffff)](https://open.spotify.com/user/31uymqpieuqu273rs7p3vfuqo3sy?si=facca7da777d4582) 
- 
+ [![Spotify](https://xalbertho-git-main-albertos-projects-c7a2f9c2.vercel.app//api/spotify?background_color=0d1117&border_color=ffffff)](https://open.spotify.com/user/31uymqpieuqu273rs7p3vfuqo3sy?si=facca7da777d4582) 
+
 
 
 
@@ -55,6 +55,7 @@
   ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=xalbertho&layout=compact&theme=monokai)
 
 [![Visits](https://komarev.com/ghpvc/?username=xalbertho&logo=GitHub&label=github%20visits&color=336699&logoColor=white&style=flat-square)](https://github.com/xalbertho)
+
 
 
 
