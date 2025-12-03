@@ -6,12 +6,6 @@
       "use": "@vercel/python"
     }
   ],
-  "routes": [
-    {
-      "src": "/api/spotify",
-      "dest": "api/spotify.py"
-    }
-  ],
   "redirects": [
     {
       "source": "/",
