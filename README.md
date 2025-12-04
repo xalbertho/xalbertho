@@ -4,7 +4,8 @@
 </div>
 
 &nbsp;<div align="center">
-  
+<!--
+
 <div align="center">
 
  <code><img
@@ -35,9 +36,10 @@
     height="30" 
     src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg"
     alt="Logo python"/></code>
-
+    
 
 <!-- Instagram -->
+<!--
 <code><a href="https://www.instagram.com/b_rmdz?igsh=bHA3OWhrdW9sOXM2" target="_blank"><img
     height="30" 
     src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" 
@@ -46,10 +48,15 @@
   </div>
 &nbsp;<div align="center">  
 
-![Metrics](https://metrics.lecoq.io/xalbertho?template=classic&languages=1&languages.colors=github&languages.details=bytes-size&languages.sections=most-used&config.timezone=America/Mexico_City&base=header&base.hireable=true&config.animated=true&config.twemoji=true&config.display=donut&config.display.adjusted=true&config.display.scale=1&theme=dark)
+-->
+[![Top Langs](https://github-readme-stats-amber-seven-22.vercel.app/api/top-langs/?username=xalbertho&layout=compact&theme=tokyonight)](https://github.com/xalbertho/github-readme-stats)
 
+&nbsp;<div align="center">
+  [![Linkedin](https://img.shields.io/badge/linked-in-369?style=flat-square&logo=linkedin&logoColor=white&color=blue)](www.linkedin.com/in/bmalbert0)
+  [![Visits](https://komarev.com/ghpvc/?username=xalbertho&logo=GitHub&label=github%20visits&color=336699&logoColor=white&style=flat-square)](https://github.com/xalbertho) 
+   <!-- [![E-Mail](https://img.shields.io/badge/email-reveal-2a8?style=flat-square&logo=gmail&logoColor=white)](https://mail.novac.dev/) -->
+</div>
 
-[![Visits](https://komarev.com/ghpvc/?username=xalbertho&logo=GitHub&label=github%20visits&color=336699&logoColor=white&style=flat-square)](https://github.com/xalbertho)
 
 
 
