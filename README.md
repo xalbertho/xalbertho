@@ -46,9 +46,11 @@
   </div>
 &nbsp;<div align="center">  
 
-  ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=xalbertho&layout=compact&theme=monokai)
+![Metrics](https://metrics.lecoq.io/xalbertho?template=classic&languages=1&languages.colors=github&languages.details=bytes-size&languages.sections=most-used&config.timezone=America/Mexico_City&base=header&base.hireable=true&config.animated=true&config.twemoji=true&config.display=donut&config.display.adjusted=true&config.display.scale=1&theme=dark)
+
 
 [![Visits](https://komarev.com/ghpvc/?username=xalbertho&logo=GitHub&label=github%20visits&color=336699&logoColor=white&style=flat-square)](https://github.com/xalbertho)
+
 
 
 
