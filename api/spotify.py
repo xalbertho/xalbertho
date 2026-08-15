@@ -187,7 +187,7 @@ def makeSVG(data, background_color, border_color, theme=None):
     if "is_playing" not in data:
         # contentBar = "" #Shows/Hides the EQ bar if no song is currently playing
         currentStatus = "Recently played:"
-        recentPlays = get(RECENTLY_PLAYING_URL)
+        recentPlays = data if "items" in data else get(RECENTLY_PLAYING_URL)
         recentPlaysLength = len(recentPlays["items"])
         itemIndex = random.randint(0, recentPlaysLength - 1)
         item = recentPlays["items"][itemIndex]["track"]
@@ -244,7 +244,9 @@ def catch_all(path):
     svg = makeSVG(data, background_color, border_color, theme)
 
     resp = Response(svg, mimetype="image/svg+xml")
-    resp.headers["Cache-Control"] = "s-maxage=1"
+    resp.headers["Cache-Control"] = "no-cache, no-store, max-age=0, s-maxage=1"
+    resp.headers["Pragma"] = "no-cache"
+    resp.headers["Expires"] = "0"
 
     return resp
 
