@@ -6,6 +6,3 @@
 
 # Pycache
 __pycache__
-
-# Local virtualenv
-.venv/
