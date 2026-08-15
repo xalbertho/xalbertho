@@ -1,4 +1,19 @@
 <svg width="500" height="128" viewBox="0 0 500 128" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <clipPath id="cardClip">
+            <rect width="500" height="128" rx="10" ry="10" />
+        </clipPath>
+        <filter id="coverBlur" x="-20%" y="-60%" width="140%" height="220%">
+            <feGaussianBlur stdDeviation="24" />
+            <feColorMatrix type="saturate" values="1.45" />
+        </filter>
+    </defs>
+    <g clip-path="url(#cardClip)">
+        <image href="data:image/png;base64, {{image}}" x="-20" y="-186" width="540" height="540" preserveAspectRatio="xMidYMid slice" filter="url(#coverBlur)" opacity="0.72" />
+        <rect width="500" height="128" fill="#{{background_color}}" opacity="0.74" />
+        <rect width="500" height="128" fill="rgb({{ songPalette[0][0] }}, {{ songPalette[0][1] }}, {{ songPalette[0][2] }})" opacity="0.16" />
+    </g>
+    <rect x="0.5" y="0.5" width="499" height="127" rx="9.5" ry="9.5" fill="none" stroke="#{{border_color}}" />
     <foreignObject width="500" height="128">
         <div xmlns="http://www.w3.org/1999/xhtml" class="card">
             <style>
@@ -11,32 +26,11 @@
                     width: 500px;
                     height: 128px;
                     overflow: hidden;
-                    border: 1px solid #{{border_color}};
                     border-radius: 10px;
-                    background:
-                        linear-gradient(135deg, rgba({{ songPalette[0][0] }}, {{ songPalette[0][1] }}, {{ songPalette[0][2] }}, 0.24) 0%, rgba(2, 6, 23, 0) 42%),
-                        linear-gradient(315deg, rgba({{ songPalette[1][0] }}, {{ songPalette[1][1] }}, {{ songPalette[1][2] }}, 0.18) 0%, rgba(2, 6, 23, 0) 40%),
-                        linear-gradient(135deg, #{{background_color}} 0%, #020617 100%);
+                    background: linear-gradient(90deg, rgba(2, 6, 23, 0.28) 0%, rgba(2, 6, 23, 0.74) 42%, rgba(2, 6, 23, 0.86) 100%);
                     color: #f8fafc;
                     font-family: "Segoe UI", Helvetica, Arial, sans-serif;
                     padding: 16px;
-                }
-
-                .backdrop {
-                    position: absolute;
-                    inset: -34px;
-                    width: 568px;
-                    height: 196px;
-                    object-fit: cover;
-                    filter: blur(28px) saturate(1.35);
-                    opacity: 0.42;
-                    transform: scale(1.03);
-                }
-
-                .veil {
-                    position: absolute;
-                    inset: 0;
-                    background: linear-gradient(90deg, rgba(2, 6, 23, 0.68) 0%, rgba(2, 6, 23, 0.88) 48%, rgba(2, 6, 23, 0.72) 100%);
                 }
 
                 .shell {
@@ -52,8 +46,9 @@
                     width: 96px;
                     height: 96px;
                     display: block;
-                    border: 1px solid rgba({{ songPalette[0][0] }}, {{ songPalette[0][1] }}, {{ songPalette[0][2] }}, 0.34);
-                    border-radius: 8px;
+                    border: 1px solid rgba(255, 255, 255, 0.18);
+                    border-radius: 9px;
+                    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.34);
                     object-fit: cover;
                 }
 
@@ -74,7 +69,7 @@
                     display: flex;
                     align-items: center;
                     gap: 7px;
-                    color: #94a3b8;
+                    color: rgba(226, 232, 240, 0.78);
                     font-size: 11px;
                     font-weight: 700;
                     letter-spacing: 0.06em;
@@ -93,7 +88,7 @@
                     flex: 0 0 auto;
                     width: 19px;
                     height: 19px;
-                    color: rgb({{ songPalette[0][0] }}, {{ songPalette[0][1] }}, {{ songPalette[0][2] }});
+                    color: rgba(248, 250, 252, 0.78);
                 }
 
                 .song,
@@ -115,7 +110,7 @@
                 }
 
                 .artist {
-                    color: #cbd5e1;
+                    color: rgba(226, 232, 240, 0.82);
                     font-size: 15px;
                     font-weight: 600;
                     line-height: 1.2;
@@ -123,17 +118,17 @@
 
                 #bars {
                     position: relative;
-                    width: 330px;
+                    width: 262px;
                     height: 10px;
                     margin-top: 11px;
                     overflow: hidden;
-                    opacity: 0.74;
+                    opacity: 0.88;
                 }
 
                 .bar {
                     position: absolute;
                     bottom: 0;
-                    width: 2px;
+                    width: 3px;
                     height: 8px;
                     border-radius: 999px;
                     background: linear-gradient(
@@ -158,9 +153,6 @@
 
                 {{barCSS|safe}}
             </style>
-
-            <img src="data:image/png;base64, {{image}}" class="backdrop" />
-            <div class="veil"></div>
 
             <div class="shell">
                 <a href="{{songURI}}" target="_blank">

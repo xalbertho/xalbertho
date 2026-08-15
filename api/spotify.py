@@ -140,7 +140,7 @@ def barGen(barCount):
                 i, left, anim, x1, y1, x2, y2
             )
         )
-        left += 4
+        left += 6
     return barCSS
 
 
@@ -180,7 +180,7 @@ def sanitizeColor(value, fallback):
 
 
 def makeSVG(data, background_color, border_color, theme=None):
-    barCount = 84
+    barCount = 44
     contentBar = "".join(["<div class='bar'></div>" for _ in range(barCount)])
     barCSS = barGen(barCount)
 
