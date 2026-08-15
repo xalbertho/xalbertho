@@ -188,7 +188,15 @@ def sanitizeInt(value, fallback, minimum, maximum):
     return max(minimum, min(maximum, parsed))
 
 
-def makeSVG(data, background_color, border_color, theme=None, bar_count=72, bar_height=22):
+def makeSVG(
+    data,
+    background_color,
+    border_color,
+    theme=None,
+    bar_count=72,
+    bar_height=22,
+    border_width=1,
+):
     barGap = 4
     barWidth = ((bar_count - 1) * barGap) + 3
     barCount = bar_count
@@ -236,6 +244,7 @@ def makeSVG(data, background_color, border_color, theme=None, bar_count=72, bar_
         "songPalette": songPalette,
         "barWidth": barWidth,
         "barHeight": bar_height,
+        "borderWidth": border_width,
     }
 
     return render_template(getTemplate(theme), **dataDict)
@@ -250,13 +259,22 @@ def catch_all(path):
     theme = request.args.get('theme')
     bar_count = sanitizeInt(request.args.get('bar_count'), 72, 24, 84)
     bar_height = sanitizeInt(request.args.get('bar_height'), 22, 8, 30)
+    border_width = sanitizeInt(request.args.get('border_width'), 1, 1, 4)
 
     try:
         data = get(NOW_PLAYING_URL)
     except Exception:
         data = get(RECENTLY_PLAYING_URL)
 
-    svg = makeSVG(data, background_color, border_color, theme, bar_count, bar_height)
+    svg = makeSVG(
+        data,
+        background_color,
+        border_color,
+        theme,
+        bar_count,
+        bar_height,
+        border_width,
+    )
 
     resp = Response(svg, mimetype="image/svg+xml")
     resp.headers["Cache-Control"] = "no-cache, no-store, max-age=0, s-maxage=1"

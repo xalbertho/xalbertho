@@ -15,7 +15,7 @@
         <circle cx="376" cy="18" r="170" fill="rgb({{ barPalette[1][0] }}, {{ barPalette[1][1] }}, {{ barPalette[1][2] }})" opacity="0.20" />
         <circle cx="454" cy="126" r="150" fill="rgb({{ barPalette[2][0] }}, {{ barPalette[2][1] }}, {{ barPalette[2][2] }})" opacity="0.18" />
     </g>
-    <rect x="0.5" y="0.5" width="499" height="127" rx="9.5" ry="9.5" fill="none" stroke="#{{border_color}}" />
+    <rect x="{{borderWidth / 2}}" y="{{borderWidth / 2}}" width="{{500 - borderWidth}}" height="{{128 - borderWidth}}" rx="9.5" ry="9.5" fill="none" stroke="#{{border_color}}" stroke-width="{{borderWidth}}" />
     <foreignObject width="500" height="128">
         <div xmlns="http://www.w3.org/1999/xhtml" class="card">
             <style>
