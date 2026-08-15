@@ -129,16 +129,15 @@ def barGen(barCount, barGap):
     barCSS = ""
     left = 1
     for i in range(1, barCount + 1):
-        anim = random.randint(480, 1100)
-        delay = random.randint(0, 900)
+        anim = random.randint(500, 1000)
         # below code generates random cubic-bezier values
         x1 = random.random()
         y1 = random.random() * 2
         x2 = random.random()
         y2 = random.random() * 2
         barCSS += (
-            ".bar:nth-child({})  {{ left: {}px; animation-duration: {}ms; animation-delay: -{}ms; animation-timing-function: cubic-bezier({},{},{},{}); }}".format(
-                i, left, anim, delay, x1, y1, x2, y2
+            ".bar:nth-child({})  {{ left: {}px; animation-duration: 15s, {}ms; animation-timing-function: ease, cubic-bezier({},{},{},{}); }}".format(
+                i, left, anim, x1, y1, x2, y2
             )
         )
         left += barGap
@@ -189,8 +188,8 @@ def sanitizeInt(value, fallback, minimum, maximum):
     return max(minimum, min(maximum, parsed))
 
 
-def makeSVG(data, background_color, border_color, theme=None, bar_count=52, bar_height=24):
-    barGap = 6
+def makeSVG(data, background_color, border_color, theme=None, bar_count=72, bar_height=22):
+    barGap = 4
     barWidth = ((bar_count - 1) * barGap) + 3
     barCount = bar_count
     contentBar = "".join(["<div class='bar'></div>" for _ in range(barCount)])
@@ -249,8 +248,8 @@ def catch_all(path):
     background_color = sanitizeColor(request.args.get('background_color'), "181414")
     border_color = sanitizeColor(request.args.get('border_color'), "181414")
     theme = request.args.get('theme')
-    bar_count = sanitizeInt(request.args.get('bar_count'), 52, 24, 72)
-    bar_height = sanitizeInt(request.args.get('bar_height'), 24, 8, 30)
+    bar_count = sanitizeInt(request.args.get('bar_count'), 72, 24, 84)
+    bar_height = sanitizeInt(request.args.get('bar_height'), 22, 8, 30)
 
     try:
         data = get(NOW_PLAYING_URL)

@@ -120,7 +120,7 @@
                     position: relative;
                     width: {{barWidth}}px;
                     height: {{barHeight}}px;
-                    margin-top: 5px;
+                    margin-top: 7px;
                     overflow: hidden;
                     opacity: 1;
                 }
@@ -129,22 +129,39 @@
                     position: absolute;
                     bottom: 0;
                     width: 3px;
-                    height: 18px;
+                    height: 15px;
                     border-radius: 999px;
                     background: linear-gradient(
                         90deg,
                         rgb({{ barPalette[0][0] }}, {{ barPalette[0][1] }}, {{ barPalette[0][2] }}) 0%,
-                        rgb({{ barPalette[1][0] }}, {{ barPalette[1][1] }}, {{ barPalette[1][2] }}) 45%,
-                        rgb({{ barPalette[2][0] }}, {{ barPalette[2][1] }}, {{ barPalette[2][2] }}) 100%
+                        rgb({{ barPalette[1][0] }}, {{ barPalette[1][1] }}, {{ barPalette[1][2] }}) 33%,
+                        rgb({{ barPalette[2][0] }}, {{ barPalette[2][1] }}, {{ barPalette[2][2] }}) 66%,
+                        rgb({{ barPalette[3][0] }}, {{ barPalette[3][1] }}, {{ barPalette[3][2] }}) 100%
                     );
+                    background-size: 200% 100%;
+                    background-position: 0% 50%;
                     box-shadow: 0 0 8px rgba({{ barPalette[0][0] }}, {{ barPalette[0][1] }}, {{ barPalette[0][2] }}, 0.32);
-                    animation: pulse 0ms -800ms ease-in infinite alternate;
+                    animation: gradient 15s ease infinite, pulse 0ms -800ms ease-in infinite alternate;
+                }
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+
+                    50% {
+                        background-position: 100% 50%;
+                    }
+
+                    100% {
+                        background-position: 0% 50%;
+                    }
                 }
 
                 @keyframes pulse {
                     0% {
                         height: 3px;
-                        opacity: 0.34;
+                        opacity: 0.35;
                     }
 
                     100% {
