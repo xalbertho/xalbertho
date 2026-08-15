@@ -118,35 +118,37 @@
 
                 #bars {
                     position: relative;
-                    width: 262px;
-                    height: 10px;
-                    margin-top: 11px;
+                    width: {{barWidth}}px;
+                    height: {{barHeight}}px;
+                    margin-top: 9px;
                     overflow: hidden;
-                    opacity: 0.72;
+                    opacity: 0.86;
                 }
 
                 .bar {
                     position: absolute;
                     bottom: 0;
-                    width: 3px;
-                    height: 8px;
+                    width: 4px;
+                    height: 14px;
                     border-radius: 999px;
                     background: linear-gradient(
-                        180deg,
-                        rgb({{ barPalette[0][0] }}, {{ barPalette[0][1] }}, {{ barPalette[0][2] }}),
-                        rgb({{ barPalette[1][0] }}, {{ barPalette[1][1] }}, {{ barPalette[1][2] }})
+                        90deg,
+                        rgb({{ barPalette[0][0] }}, {{ barPalette[0][1] }}, {{ barPalette[0][2] }}) 0%,
+                        rgb({{ barPalette[1][0] }}, {{ barPalette[1][1] }}, {{ barPalette[1][2] }}) 45%,
+                        rgb({{ barPalette[2][0] }}, {{ barPalette[2][1] }}, {{ barPalette[2][2] }}) 100%
                     );
+                    box-shadow: 0 0 9px rgba({{ barPalette[0][0] }}, {{ barPalette[0][1] }}, {{ barPalette[0][2] }}, 0.18);
                     animation: pulse 0ms -800ms ease-in infinite alternate;
                 }
 
                 @keyframes pulse {
                     0% {
-                        height: 2px;
-                        opacity: 0.38;
+                        height: 4px;
+                        opacity: 0.42;
                     }
 
                     100% {
-                        height: 10px;
+                        height: {{barHeight}}px;
                         opacity: 1;
                     }
                 }

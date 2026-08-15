@@ -125,7 +125,7 @@ def get(url):
     return json.loads(body.decode("utf-8"))
 
 
-def barGen(barCount):
+def barGen(barCount, barGap):
     barCSS = ""
     left = 1
     for i in range(1, barCount + 1):
@@ -140,7 +140,7 @@ def barGen(barCount):
                 i, left, anim, x1, y1, x2, y2
             )
         )
-        left += 6
+        left += barGap
     return barCSS
 
 
@@ -179,10 +179,21 @@ def sanitizeColor(value, fallback):
     return value if value and HEX_COLOR.match(value) else fallback
 
 
-def makeSVG(data, background_color, border_color, theme=None):
-    barCount = 44
+def sanitizeInt(value, fallback, minimum, maximum):
+    try:
+        parsed = int(value)
+    except (TypeError, ValueError):
+        return fallback
+
+    return max(minimum, min(maximum, parsed))
+
+
+def makeSVG(data, background_color, border_color, theme=None, bar_count=56, bar_height=18):
+    barGap = 5
+    barWidth = ((bar_count - 1) * barGap) + 4
+    barCount = bar_count
     contentBar = "".join(["<div class='bar'></div>" for _ in range(barCount)])
-    barCSS = barGen(barCount)
+    barCSS = barGen(barCount, barGap)
 
     if "is_playing" not in data:
         # contentBar = "" #Shows/Hides the EQ bar if no song is currently playing
@@ -223,6 +234,8 @@ def makeSVG(data, background_color, border_color, theme=None):
         "border_color": border_color,
         "barPalette": barPalette,
         "songPalette": songPalette,
+        "barWidth": barWidth,
+        "barHeight": bar_height,
     }
 
     return render_template(getTemplate(theme), **dataDict)
@@ -235,13 +248,15 @@ def catch_all(path):
     background_color = sanitizeColor(request.args.get('background_color'), "181414")
     border_color = sanitizeColor(request.args.get('border_color'), "181414")
     theme = request.args.get('theme')
+    bar_count = sanitizeInt(request.args.get('bar_count'), 56, 24, 72)
+    bar_height = sanitizeInt(request.args.get('bar_height'), 18, 8, 24)
 
     try:
         data = get(NOW_PLAYING_URL)
     except Exception:
         data = get(RECENTLY_PLAYING_URL)
 
-    svg = makeSVG(data, background_color, border_color, theme)
+    svg = makeSVG(data, background_color, border_color, theme, bar_count, bar_height)
 
     resp = Response(svg, mimetype="image/svg+xml")
     resp.headers["Cache-Control"] = "no-cache, no-store, max-age=0, s-maxage=1"

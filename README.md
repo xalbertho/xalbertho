@@ -1,9 +1,9 @@
 &nbsp;<div align="center">
   <a href="https://open.spotify.com/user/31uymqpieuqu273rs7p3vfuqo3sy?si=facca7da777d4582">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://xalbertho.vercel.app/api/spotify?theme=dark&amp;background_color=0b1220&amp;border_color=1f2937&amp;v=2" />
-      <source media="(prefers-color-scheme: light)" srcset="https://xalbertho.vercel.app/api/spotify?theme=light&amp;background_color=f8fafc&amp;border_color=e5e7eb&amp;v=2" />
-      <img alt="Spotify" src="https://xalbertho.vercel.app/api/spotify?theme=dark&amp;background_color=0b1220&amp;border_color=1f2937&amp;v=2" width="500" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://xalbertho.vercel.app/api/spotify?theme=dark&amp;background_color=0b1220&amp;border_color=1f2937&amp;bar_count=56&amp;bar_height=18&amp;v=4" />
+      <source media="(prefers-color-scheme: light)" srcset="https://xalbertho.vercel.app/api/spotify?theme=light&amp;background_color=f8fafc&amp;border_color=e5e7eb&amp;bar_count=56&amp;bar_height=18&amp;v=4" />
+      <img alt="Spotify" src="https://xalbertho.vercel.app/api/spotify?theme=dark&amp;background_color=0b1220&amp;border_color=1f2937&amp;bar_count=56&amp;bar_height=18&amp;v=4" width="500" />
     </picture>
   </a>
 </div>
