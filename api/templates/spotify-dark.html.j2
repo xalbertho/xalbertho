@@ -10,8 +10,10 @@
     </defs>
     <g clip-path="url(#cardClip)">
         <image href="data:image/png;base64, {{image}}" x="-20" y="-186" width="540" height="540" preserveAspectRatio="xMidYMid slice" filter="url(#coverBlur)" opacity="0.72" />
-        <rect width="500" height="128" fill="#{{background_color}}" opacity="0.74" />
-        <rect width="500" height="128" fill="rgb({{ songPalette[0][0] }}, {{ songPalette[0][1] }}, {{ songPalette[0][2] }})" opacity="0.16" />
+        <rect width="500" height="128" fill="#{{background_color}}" opacity="0.58" />
+        <circle cx="96" cy="54" r="150" fill="rgb({{ barPalette[0][0] }}, {{ barPalette[0][1] }}, {{ barPalette[0][2] }})" opacity="0.30" />
+        <circle cx="376" cy="18" r="170" fill="rgb({{ barPalette[1][0] }}, {{ barPalette[1][1] }}, {{ barPalette[1][2] }})" opacity="0.20" />
+        <circle cx="454" cy="126" r="150" fill="rgb({{ barPalette[2][0] }}, {{ barPalette[2][1] }}, {{ barPalette[2][2] }})" opacity="0.18" />
     </g>
     <rect x="0.5" y="0.5" width="499" height="127" rx="9.5" ry="9.5" fill="none" stroke="#{{border_color}}" />
     <foreignObject width="500" height="128">
@@ -27,7 +29,7 @@
                     height: 128px;
                     overflow: hidden;
                     border-radius: 10px;
-                    background: linear-gradient(90deg, rgba(2, 6, 23, 0.28) 0%, rgba(2, 6, 23, 0.74) 42%, rgba(2, 6, 23, 0.86) 100%);
+                    background: linear-gradient(90deg, rgba(2, 6, 23, 0.22) 0%, rgba(2, 6, 23, 0.70) 42%, rgba(2, 6, 23, 0.84) 100%);
                     color: #f8fafc;
                     font-family: "Segoe UI", Helvetica, Arial, sans-serif;
                     padding: 16px;
@@ -142,6 +144,22 @@
                     background-position: 0% 50%;
                     box-shadow: 0 0 8px rgba({{ barPalette[0][0] }}, {{ barPalette[0][1] }}, {{ barPalette[0][2] }}, 0.32);
                     animation: gradient 15s ease infinite, pulse 0ms -800ms ease-in infinite alternate;
+                }
+
+                .bar:nth-child(4n + 1) {
+                    background: linear-gradient(180deg, rgb({{ barPalette[0][0] }}, {{ barPalette[0][1] }}, {{ barPalette[0][2] }}), rgb({{ barPalette[1][0] }}, {{ barPalette[1][1] }}, {{ barPalette[1][2] }}));
+                }
+
+                .bar:nth-child(4n + 2) {
+                    background: linear-gradient(180deg, rgb({{ barPalette[1][0] }}, {{ barPalette[1][1] }}, {{ barPalette[1][2] }}), rgb({{ barPalette[2][0] }}, {{ barPalette[2][1] }}, {{ barPalette[2][2] }}));
+                }
+
+                .bar:nth-child(4n + 3) {
+                    background: linear-gradient(180deg, rgb({{ barPalette[2][0] }}, {{ barPalette[2][1] }}, {{ barPalette[2][2] }}), rgb({{ barPalette[3][0] }}, {{ barPalette[3][1] }}, {{ barPalette[3][2] }}));
+                }
+
+                .bar:nth-child(4n) {
+                    background: linear-gradient(180deg, rgb({{ barPalette[3][0] }}, {{ barPalette[3][1] }}, {{ barPalette[3][2] }}), rgb({{ barPalette[0][0] }}, {{ barPalette[0][1] }}, {{ barPalette[0][2] }}));
                 }
 
                 @keyframes gradient {
