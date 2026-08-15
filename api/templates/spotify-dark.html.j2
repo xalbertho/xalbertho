@@ -120,16 +120,16 @@
                     position: relative;
                     width: {{barWidth}}px;
                     height: {{barHeight}}px;
-                    margin-top: 9px;
+                    margin-top: 5px;
                     overflow: hidden;
-                    opacity: 0.94;
+                    opacity: 1;
                 }
 
                 .bar {
                     position: absolute;
                     bottom: 0;
-                    width: 4px;
-                    height: 14px;
+                    width: 3px;
+                    height: 18px;
                     border-radius: 999px;
                     background: linear-gradient(
                         90deg,
@@ -137,14 +137,14 @@
                         rgb({{ barPalette[1][0] }}, {{ barPalette[1][1] }}, {{ barPalette[1][2] }}) 45%,
                         rgb({{ barPalette[2][0] }}, {{ barPalette[2][1] }}, {{ barPalette[2][2] }}) 100%
                     );
-                    box-shadow: 0 0 10px rgba({{ barPalette[0][0] }}, {{ barPalette[0][1] }}, {{ barPalette[0][2] }}, 0.26);
+                    box-shadow: 0 0 8px rgba({{ barPalette[0][0] }}, {{ barPalette[0][1] }}, {{ barPalette[0][2] }}, 0.32);
                     animation: pulse 0ms -800ms ease-in infinite alternate;
                 }
 
                 @keyframes pulse {
                     0% {
-                        height: 4px;
-                        opacity: 0.42;
+                        height: 3px;
+                        opacity: 0.34;
                     }
 
                     100% {

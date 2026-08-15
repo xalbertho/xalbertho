@@ -129,7 +129,7 @@ def barGen(barCount, barGap):
     barCSS = ""
     left = 1
     for i in range(1, barCount + 1):
-        anim = random.randint(500, 1000)
+        anim = random.randint(420, 980)
         # below code generates random cubic-bezier values
         x1 = random.random()
         y1 = random.random() * 2
@@ -188,9 +188,9 @@ def sanitizeInt(value, fallback, minimum, maximum):
     return max(minimum, min(maximum, parsed))
 
 
-def makeSVG(data, background_color, border_color, theme=None, bar_count=56, bar_height=18):
-    barGap = 5
-    barWidth = ((bar_count - 1) * barGap) + 4
+def makeSVG(data, background_color, border_color, theme=None, bar_count=72, bar_height=24):
+    barGap = 4
+    barWidth = ((bar_count - 1) * barGap) + 3
     barCount = bar_count
     contentBar = "".join(["<div class='bar'></div>" for _ in range(barCount)])
     barCSS = barGen(barCount, barGap)
@@ -248,8 +248,8 @@ def catch_all(path):
     background_color = sanitizeColor(request.args.get('background_color'), "181414")
     border_color = sanitizeColor(request.args.get('border_color'), "181414")
     theme = request.args.get('theme')
-    bar_count = sanitizeInt(request.args.get('bar_count'), 56, 24, 72)
-    bar_height = sanitizeInt(request.args.get('bar_height'), 18, 8, 24)
+    bar_count = sanitizeInt(request.args.get('bar_count'), 72, 24, 84)
+    bar_height = sanitizeInt(request.args.get('bar_height'), 24, 8, 30)
 
     try:
         data = get(NOW_PLAYING_URL)
