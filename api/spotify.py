@@ -2,6 +2,7 @@ from io import BytesIO
 import os
 import json
 import random
+import re
 # import requests  # <-- YA NO USAMOS ESTO
 
 from colorthief import ColorThief
@@ -26,6 +27,7 @@ SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
 SPOTIFY_SECRET_ID = os.getenv("SPOTIFY_SECRET_ID")
 SPOTIFY_REFRESH_TOKEN = os.getenv("SPOTIFY_REFRESH_TOKEN")
 SPOTIFY_TOKEN = ""
+HEX_COLOR = re.compile(r"^[0-9a-fA-F]{6}$")
 
 FALLBACK_THEME = "spotify.html.j2"
 
@@ -153,11 +155,13 @@ def gradientGen(albumArtURL, color_count):
     return palette
 
 
-def getTemplate():
+def getTemplate(theme=None):
     try:
-        file = open("api/templates.json", "r")
-        templates = json.loads(file.read())
-        return templates["templates"][templates["current-theme"]]
+        with open("api/templates.json", "r", encoding="utf-8") as file:
+            templates = json.loads(file.read())
+
+        selected_theme = theme or templates["current-theme"]
+        return templates["templates"].get(selected_theme, templates["templates"]["dark"])
     except Exception as e:
         print(f"Failed to load templates.\r\n```{e}```")
         return FALLBACK_THEME
@@ -171,7 +175,11 @@ def loadImageB64(url):
     return b64encode(body).decode("ascii")
 
 
-def makeSVG(data, background_color, border_color):
+def sanitizeColor(value, fallback):
+    return value if value and HEX_COLOR.match(value) else fallback
+
+
+def makeSVG(data, background_color, border_color, theme=None):
     barCount = 84
     contentBar = "".join(["<div class='bar'></div>" for _ in range(barCount)])
     barCSS = barGen(barCount)
@@ -217,22 +225,23 @@ def makeSVG(data, background_color, border_color):
         "songPalette": songPalette,
     }
 
-    return render_template(getTemplate(), **dataDict)
+    return render_template(getTemplate(theme), **dataDict)
 
 
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 @app.route('/with_parameters')
 def catch_all(path):
-    background_color = request.args.get('background_color') or "181414"
-    border_color = request.args.get('border_color') or "181414"
+    background_color = sanitizeColor(request.args.get('background_color'), "181414")
+    border_color = sanitizeColor(request.args.get('border_color'), "181414")
+    theme = request.args.get('theme')
 
     try:
         data = get(NOW_PLAYING_URL)
     except Exception:
         data = get(RECENTLY_PLAYING_URL)
 
-    svg = makeSVG(data, background_color, border_color)
+    svg = makeSVG(data, background_color, border_color, theme)
 
     resp = Response(svg, mimetype="image/svg+xml")
     resp.headers["Cache-Control"] = "s-maxage=1"

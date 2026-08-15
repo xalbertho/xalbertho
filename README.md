@@ -1,72 +1,44 @@
-&nbsp;<div align="center">
-  [![Spotify](https://xalbertho.vercel.app/api/spotify?background_color=0f172a&border_color=38bdf8)](https://open.spotify.com/user/31uymqpieuqu273rs7p3vfuqo3sy?si=facca7da777d4582)
-  
+<div align="center">
+
+# xalbertho
+
+Building small, useful software with Python, Linux, APIs, and clean automation.
+
+<a href="https://open.spotify.com/user/31uymqpieuqu273rs7p3vfuqo3sy?si=facca7da777d4582">
+  <img alt="Spotify now playing" src="https://xalbertho.vercel.app/api/spotify?theme=light&amp;background_color=f8fafc&amp;border_color=e2e8f0#gh-light-mode-only" width="560" />
+</a>
+<a href="https://open.spotify.com/user/31uymqpieuqu273rs7p3vfuqo3sy?si=facca7da777d4582">
+  <img alt="Spotify now playing" src="https://xalbertho.vercel.app/api/spotify?theme=dark&amp;background_color=0f172a&amp;border_color=334155#gh-dark-mode-only" width="560" />
+</a>
+
 </div>
 
-&nbsp;<div align="center">
-<!--
+## Focus
+
+I like working close to the system: Linux setups, APIs, data scripts, and backend utilities that solve real problems without much ceremony.
+
+## Stack
+
+<p>
+  <img alt="Python" src="https://img.shields.io/badge/Python-0f172a?style=flat-square&logo=python&logoColor=ffd43b" />
+  <img alt="Linux" src="https://img.shields.io/badge/Linux-0f172a?style=flat-square&logo=linux&logoColor=white" />
+  <img alt="Git" src="https://img.shields.io/badge/Git-0f172a?style=flat-square&logo=git&logoColor=f97316" />
+  <img alt="GitHub" src="https://img.shields.io/badge/GitHub-0f172a?style=flat-square&logo=github&logoColor=white" />
+  <img alt="Vercel" src="https://img.shields.io/badge/Vercel-0f172a?style=flat-square&logo=vercel&logoColor=white" />
+</p>
+
+## Stats
 
 <div align="center">
 
- <code><img
-    height="30"
-    src="https://www.mathworks.com/matlabcentral/communitycontests/uploaded_files/159/image.png"
-    alt="Logo matlab"/></code>
-<code><img
-    height="30"
-    src="https://github.com/devicons/devicon/blob/master/icons/c/c-line.svg"
-    alt="Logo c"/></code>
-<code><img
-    height="30"
-    src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png"
-    alt="Logo visual studio"/></code>
-<code><img
-    height="30"
-    src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-line.svg"
-    alt="Logo C++"/></code>
-<code><img
-    height="30"
-    src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"
-    alt="Logo HTML"/></code>
-<code><img
-    height="30"
-    src="https://github.com/devicons/devicon/blob/master/icons/github/github-original-wordmark.svg"
-    alt="Logo github"/></code>
-<code><img
-    height="30" 
-    src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg"
-    alt="Logo python"/></code>
-    
+![Top Langs](https://github-readme-stats-amber-seven-22.vercel.app/api/top-langs/?username=xalbertho&layout=compact&theme=default&hide_border=true#gh-light-mode-only)
+![Top Langs](https://github-readme-stats-amber-seven-22.vercel.app/api/top-langs/?username=xalbertho&layout=compact&theme=tokyonight&hide_border=true#gh-dark-mode-only)
 
-<!-- Instagram -->
-<!--
-<code><a href="https://www.instagram.com/b_rmdz?igsh=bHA3OWhrdW9sOXM2" target="_blank"><img
-    height="30" 
-    src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" 
-    style="filter: invert(1);"
-    alt="Logo Instagram"/></a></code>
-  </div>
-&nbsp;<div align="center">  
+<a href="https://www.linkedin.com/in/bmalbert0">
+  <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0a66c2?style=flat-square&logo=linkedin&logoColor=white" />
+</a>
+<a href="https://github.com/xalbertho">
+  <img alt="GitHub visits" src="https://komarev.com/ghpvc/?username=xalbertho&logo=GitHub&label=github%20visits&color=336699&logoColor=white&style=flat-square" />
+</a>
 
--->
-
-[![Top Langs](https://github-readme-stats-amber-seven-22.vercel.app/api/top-langs/?username=xalbertho&layout=compact&theme=tokyonight&v=3)](https://github.com/xalbertho)
-
-&nbsp;<div align="center">
-  [![Linkedin](https://img.shields.io/badge/linked-in-369?style=flat-square&logo=linkedin&logoColor=white&color=blue)](https://www.linkedin.com/in/bmalbert0)
-  [![Visits](https://komarev.com/ghpvc/?username=xalbertho&logo=GitHub&label=github%20visits&color=336699&logoColor=white&style=flat-square)](https://github.com/xalbertho) 
-   <!-- [![E-Mail](https://img.shields.io/badge/email-reveal-2a8?style=flat-square&logo=gmail&logoColor=white)](https://mail.novac.dev/) -->
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
