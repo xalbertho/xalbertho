@@ -1,5 +1,5 @@
-<svg width="560" height="160" viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg">
-    <foreignObject width="560" height="160">
+<svg width="500" height="128" viewBox="0 0 500 128" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="500" height="128">
         <div xmlns="http://www.w3.org/1999/xhtml" class="card">
             <style>
                 * {
@@ -7,38 +7,30 @@
                 }
 
                 .card {
-                    width: 560px;
-                    height: 160px;
+                    width: 500px;
+                    height: 128px;
                     overflow: hidden;
                     border: 1px solid #{{border_color}};
-                    border-radius: 14px;
-                    background:
-                        radial-gradient(circle at 18% 20%, rgba({{ songPalette[0][0] }}, {{ songPalette[0][1] }}, {{ songPalette[0][2] }}, 0.20), transparent 35%),
-                        linear-gradient(135deg, #{{background_color}} 0%, #ffffff 48%, #eef2f7 100%);
+                    border-radius: 10px;
+                    background: linear-gradient(135deg, #{{background_color}} 0%, #ffffff 100%);
                     color: #111827;
-                    font-family: "SF Pro Display", "Segoe UI", Helvetica, Arial, sans-serif;
-                    padding: 18px;
+                    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+                    padding: 16px;
                 }
 
                 .shell {
                     display: flex;
                     align-items: center;
-                    gap: 18px;
-                    height: 124px;
-                }
-
-                .cover-link {
-                    flex: 0 0 112px;
-                    height: 112px;
+                    gap: 16px;
+                    height: 96px;
                 }
 
                 .cover {
-                    width: 112px;
-                    height: 112px;
+                    width: 96px;
+                    height: 96px;
                     display: block;
                     border: 1px solid rgba(17, 24, 39, 0.10);
-                    border-radius: 12px;
-                    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.20);
+                    border-radius: 8px;
                     object-fit: cover;
                 }
 
@@ -47,31 +39,44 @@
                     flex: 1;
                 }
 
-                .eyebrow {
+                .topline {
                     display: flex;
                     align-items: center;
-                    gap: 8px;
-                    color: #475569;
-                    font-size: 12px;
+                    justify-content: space-between;
+                    gap: 12px;
+                    margin-bottom: 10px;
+                }
+
+                .status {
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+                    color: #64748b;
+                    font-size: 11px;
                     font-weight: 700;
-                    letter-spacing: 0.08em;
+                    letter-spacing: 0.06em;
                     line-height: 1;
-                    margin-bottom: 12px;
                     text-transform: uppercase;
                 }
 
                 .dot {
-                    width: 8px;
-                    height: 8px;
+                    width: 7px;
+                    height: 7px;
                     border-radius: 999px;
-                    background: #1db954;
-                    box-shadow: 0 0 0 5px rgba(29, 185, 84, 0.16);
+                    background: rgb({{ songPalette[0][0] }}, {{ songPalette[0][1] }}, {{ songPalette[0][2] }});
+                }
+
+                .spotify {
+                    flex: 0 0 auto;
+                    width: 19px;
+                    height: 19px;
+                    color: #1db954;
                 }
 
                 .song,
                 .artist {
                     display: block;
-                    max-width: 360px;
+                    max-width: 350px;
                     overflow: hidden;
                     text-decoration: none;
                     text-overflow: ellipsis;
@@ -80,64 +85,46 @@
 
                 .song {
                     color: #0f172a;
-                    font-size: 27px;
-                    font-weight: 800;
-                    line-height: 1.05;
-                    margin-bottom: 8px;
+                    font-size: 23px;
+                    font-weight: 750;
+                    line-height: 1.1;
+                    margin-bottom: 6px;
                 }
 
                 .artist {
                     color: #475569;
-                    font-size: 18px;
-                    font-weight: 650;
-                    line-height: 1.15;
-                }
-
-                .footer {
-                    display: flex;
-                    align-items: flex-end;
-                    justify-content: space-between;
-                    gap: 14px;
-                    margin-top: 18px;
+                    font-size: 15px;
+                    font-weight: 600;
+                    line-height: 1.2;
                 }
 
                 #bars {
                     position: relative;
-                    width: 337px;
-                    height: 22px;
+                    width: 292px;
+                    height: 10px;
+                    margin-top: 11px;
                     overflow: hidden;
+                    opacity: 0.72;
                 }
 
                 .bar {
                     position: absolute;
                     bottom: 0;
-                    width: 3px;
-                    height: 12px;
+                    width: 2px;
+                    height: 8px;
                     border-radius: 999px;
-                    background: linear-gradient(
-                        180deg,
-                        rgb({{ barPalette[0][0] }}, {{ barPalette[0][1] }}, {{ barPalette[0][2] }}) 0%,
-                        rgb({{ barPalette[1][0] }}, {{ barPalette[1][1] }}, {{ barPalette[1][2] }}) 52%,
-                        rgb({{ barPalette[3][0] }}, {{ barPalette[3][1] }}, {{ barPalette[3][2] }}) 100%
-                    );
+                    background: rgb({{ barPalette[0][0] }}, {{ barPalette[0][1] }}, {{ barPalette[0][2] }});
                     animation: pulse 0ms -800ms ease-in infinite alternate;
-                    opacity: 0.9;
-                }
-
-                .spotify-mark {
-                    width: 24px;
-                    height: 24px;
-                    color: #1db954;
                 }
 
                 @keyframes pulse {
                     0% {
-                        height: 4px;
-                        opacity: 0.35;
+                        height: 2px;
+                        opacity: 0.38;
                     }
 
                     100% {
-                        height: 22px;
+                        height: 10px;
                         opacity: 1;
                     }
                 }
@@ -146,23 +133,23 @@
             </style>
 
             <div class="shell">
-                <a class="cover-link" href="{{songURI}}" target="_blank">
+                <a href="{{songURI}}" target="_blank">
                     <img src="data:image/png;base64, {{image}}" class="cover" />
                 </a>
 
                 <div class="content">
-                    <div class="eyebrow"><span class="dot"></span>{{status}}</div>
-                    <a href="{{songURI}}" target="_blank" class="song">{{songName}}</a>
-                    <a href="{{artistURI}}" target="_blank" class="artist">{{artistName}}</a>
-                    <div class="footer">
-                        <div id="bars">{{contentBar|safe}}</div>
-                        <a href="{{songURI}}" target="_blank" class="spotify-mark">
+                    <div class="topline">
+                        <div class="status"><span class="dot"></span>{{status}}</div>
+                        <a href="{{songURI}}" target="_blank" class="spotify">
                             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <title>Spotify</title>
                                 <path fill="currentColor" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
                             </svg>
                         </a>
                     </div>
+                    <a href="{{songURI}}" target="_blank" class="song">{{songName}}</a>
+                    <a href="{{artistURI}}" target="_blank" class="artist">{{artistName}}</a>
+                    <div id="bars">{{contentBar|safe}}</div>
                 </div>
             </div>
         </div>
